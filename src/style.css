@@ -1,0 +1,182 @@
+* {
+  color: #333;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  transition: all 0.2s;
+}
+
+body {
+  background: floralwhite;
+  padding: 4rem 6rem;
+}
+
+button,
+select {
+  cursor: pointer;
+  border-radius: 0.25rem;
+  outline: none;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+button {
+  background-color: palevioletred;
+  border: none;
+  color: #fff;
+  padding: 6px 16px;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+select {
+  border: 1px solid #eee;
+  padding: 5px 8px;
+  width: 14rem;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.align-items-end {
+  align-items: flex-end;
+}
+
+.double-space {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+}
+
+.fact-card {
+  text-align: center;
+}
+
+.fact-data {
+  font-size: 4rem;
+  font-weight: bold;
+  line-height: 1;
+  background: -webkit-linear-gradient(palevioletred, steelblue);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.film-card {
+  font-size: 0.875rem;
+}
+
+.film-card img {
+  width: 10rem;
+}
+
+.film-description {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 5;
+  line-clamp: 5;
+  -webkit-box-orient: vertical;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flex {
+  display: flex;
+  gap: 1rem;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+.flex-row {
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.grid {
+  display: grid;
+  grid-gap: 2rem;
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-cols-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.grid-item {
+  background-color: #fff;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  padding: 1.5rem;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-end {
+  justify-content: flex-end;
+}
+
+.logo {
+  width: 100%;
+  max-width: 18rem;
+}
+
+@media (max-width: 1199px) {
+  .grid-cols-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 991px) {
+  body {
+    padding: 2rem 1rem;
+  }
+
+  .double-space {
+    gap: 2rem;
+  }
+
+  .film-card img {
+    width: 100%;
+  }
+
+  .grid {
+    gap: 1rem;
+  }
+
+  .grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 425px) {
+  .fact-card {
+    font-size: 0.875rem;
+  }
+
+  .fact-data {
+    font-size: 2.5rem;
+  }
+
+  .grid-cols-2 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .grid-item {
+    padding: 1rem;
+  }
+}

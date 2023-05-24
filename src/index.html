@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Studio Ghibli</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="double-space" id="root">
+    <div class="flex flex-row align-items-end">
+      <img class="logo"
+        src="https://upload.wikimedia.org/wikipedia/en/thumb/c/ca/Studio_Ghibli_logo.svg/1200px-Studio_Ghibli_logo.svg.png"
+        alt="Studio Ghibli logo" />
+      <p class="flex-1">
+        Studio Ghibli (スタジオジブリ Sutajio Jiburi) is a Japanese animation studio, considered by critics and many
+        moviegoers as one of the best animation studios in the world today. specialized critics and many moviegoers as
+        one of the best animation studios in the world today.
+      </p>
+    </div>
+    <div class="flex flex-col">
+      <div class="flex flex-row align-items-center">
+        <h2>🎬 Films</h2>
+        <p>
+          Check out our list of Studio Ghibli movies to see which one is your favorite.
+        </p>
+      </div>
+      <div class="flex flex-row justify-content-end">
+        <select id="sort-by">
+          <option disabled selected>Sort by</option>
+          <option value="title">Title</option>
+          <option value="newest">Newest</option>
+          <option value="oldest">Oldest</option>
+          <option value="best_score">Best Rotten Tomatoes Score</option>
+          <option value="worst_score">Worst Rotten Tomatoes Score</option>
+        </select>
+        <select id="filter-by-director">
+          <option disabled selected>Filter by director</option>
+          <option value="Hayao Miyazaki">Hayao Miyazaki</option>
+          <option value="Isao Takahata">Isao Takahata</option>
+          <option value="Yoshifumi Kondō">Yoshifumi Kondō</option>
+          <option value="Hiroyuki Morita">Hiroyuki Morita</option>
+          <option value="Gorō Miyazaki">Gorō Miyazaki</option>
+          <option value="Hiromasa Yonebayashi">Hiromasa Yonebayashi</option>
+        </select>
+        <button id="clear-filters">Clear filters</button>
+      </div>
+      <div class="grid grid-cols-2" id="films-container"></div>
+    </div>
+  </div>
+
+  <script src="main.js" type="module"></script>
+</body>
+
+</html>
