@@ -1,7 +1,7 @@
 // Aquí debes escribir la lógica que corresponde a tu proyecto, es decir,
 // interactuar con el DOM, haciendo uso de las funciones declaradas en data.js
 
-// Importar la data desde data.js
+// Importar la data desde ghibli.js
 import data from "./ghibli.js";
 
 // Importar la función que filtra y la función que ordena
@@ -16,16 +16,18 @@ const sortBySelect = document.getElementById("sort-by");
 const filterByDirectorSelect = document.getElementById("filter-by-director");
 const clearFiltersButton = document.getElementById("clear-filters");
 
-// Obtener la data de las películas desde data.js
+// Obtener la data de las películas desde ghibli.js
 // y guardarla en una variable para usarla cuando sea necesario
 const films = data.films;
+console.log(films)
+//imprime la constante no una string, con comillas solo veria en la consola la palabra films, por eso no agregar comillas
 
 // Esta función crea los elementos HTML que representan a las películas
 // mapeando el array que se le pase como argumento
 // y retornando un string con el HTML y los datos de cada película
 const createFilms = (array) => {
   const filmsCards = array
-    .map(
+  .map(
       (film) => `
         <div class="grid-item film-card flex flex-row">
             <img src="${film.poster}" alt="${film.title}"/>
@@ -46,24 +48,31 @@ const createFilms = (array) => {
     )
     .join("");
   // ¿Cómo añadimos los elementos de filmsCards al DOM?
+ //
+ filmsContainer.innerHTML= filmsCards;
+
+//document.getElementById("films-container").addEventListener
   // return ...
+  return films;
 };
 
 // Llamar a la función createFilms para que se ejecute al cargar la página
-createFilms(data.films);
+createFilms(films);
 
 // Añadir los event listeners a los elementos del DOM con los que vamos a interactuar
 // y llamar a la función createFilms con la información (el arreglo) que necesite
 
 sortBySelect.addEventListener("change", (event) => {
+  console.log(event.target.value)
   const sortedFilms =
-    sort(/* ¿Qué información está esperando la función sort? */);
+    sort(films, event.target.value/* ¿Qué información está esperando la función sort? */);
   createFilms(sortedFilms);
 });
 
 filterByDirectorSelect.addEventListener("change", (event) => {
+  console.log(event.target.value)
   const filteredFilms =
-    filter(/* ¿Qué información está esperando la función filter? */);
+    filter(films, event.target.value /* ¿Qué información está esperando la función filter? */);
   createFilms(filteredFilms);
 });
 
